@@ -22,6 +22,7 @@ function App() {
   const [pledgeAmount, setPledgeAmount] = useState(0);
   const [error, setError] = useState('');
   const [showCompletedModal, setShowCompletedModal] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(true);
 
   // data
   const [tiers, setTiers] = useState([
@@ -67,12 +68,20 @@ function App() {
     useRef(null),
   ]
 
-  // modal controllers
+  // toggle functions
   const toggleBookmarked = () => setBookmarked(oldBookmarked => !oldBookmarked);
   const openModal = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
   const openCompletedModal = () => setShowCompletedModal(true);
   const closeCompletedModal = () => setShowCompletedModal(false);
+  const openMobileMenu = () => setShowMobileMenu(true);
+  const closeMobileMenu = () => setShowMobileMenu(false);
+
+  // handle overview button click
+  function overviewClick() {
+    openModal();
+    setSelected(false);
+  }
 
   // control selected modal card
   function handleCheckModal(id) {
@@ -174,12 +183,16 @@ function App() {
   
   return (
     <>
-      <Navbar />
+      <Navbar
+        showMobileMenu={showMobileMenu}
+        openMobileMenu={openMobileMenu}
+        closeMobileMenu={closeMobileMenu}
+      />
       <main className="main">
         <Overview
           bookmarked={bookmarked}
           toggleBookmarked={toggleBookmarked}
-          openModal={openModal}
+          overviewClick={overviewClick}
         />
         <Stats backed={backed} goal={100000} backers={backers} />
         <Content tiers={tiers} handlePledgeCardClick={handlePledgeCardClick} />
@@ -200,7 +213,9 @@ function App() {
         />
       )}
 
-      {showCompletedModal && <CompletedModal closeCompletedModal={closeCompletedModal} />}
+      {showCompletedModal && (
+        <CompletedModal closeCompletedModal={closeCompletedModal} />
+      )}
     </>
   );
 }

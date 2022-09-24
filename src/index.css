@@ -40,6 +40,10 @@ body {
   margin-top: 30px;
 }
 
+.nav-mobile-bg-gradient {
+  display: none;
+}
+
 .nav-logo {
   cursor: pointer;
 }
@@ -59,6 +63,10 @@ body {
 .nav-links-item {
   color: white;
   cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
 }
 
 .main {
@@ -291,6 +299,7 @@ body {
 }
 
 .modal-container {
+  z-index: 2;
   position: absolute;
   top: -30px;
   left: 0;
@@ -304,7 +313,7 @@ body {
   margin: auto;
   margin-top: 100px;
   width: 750px;
-  z-index: 1;
+  z-index: 2;
   opacity: 1;
   display: flex;
   flex-direction: column;
@@ -587,6 +596,12 @@ input[type="checkbox"] {
     background-image: url('images/image-hero-mobile.jpg');
   }
 
+  .nav {
+    width: 90vw;
+    position: relative;
+    z-index: 1;
+  }
+
   .nav-ham {
     display: block;
     cursor: pointer;
@@ -594,6 +609,44 @@ input[type="checkbox"] {
 
   .nav-links {
     display: none;
+  }
+
+  .nav-mobile-bg-gradient {
+    display: block;
+    z-index: -1;
+    position: absolute;
+    /* background: linear-gradient(to bottom, #000000aa, #ffffffaa); */
+    background: linear-gradient(to bottom, black, white);
+    opacity: 0.5;
+    top: -30px;
+    left: -10vw;
+    width: 110vw;
+    height: 1000px;
+  }
+
+  .mobile-menu {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    top: 60px;
+    width: 90vw;
+    background-color: white;
+    /* background-color: pink; */
+    border-radius: 10px;
+  }
+
+  .mobile-menu-item {
+    padding: 25px 0 25px 30px;
+    font-size: 20px;
+    font-weight: 500;   
+    cursor: pointer;
+  }
+
+  .mobile-menu-divider {
+    background-color: rgb(206, 206, 206);
+    border: none;
+    height: 1px;
+    width: 100%;
   }
 
   .main {

@@ -3,7 +3,7 @@ import React from 'react'
 import logo from '../assets/logo-mastercraft.svg'
 import bookmark from '../assets/icon-bookmark.svg'
 
-function Overview({ bookmarked, toggleBookmarked, openModal }) {
+function Overview({ bookmarked, toggleBookmarked, overviewClick }) {
   return (
     <section className="overview">
       <img className="overview-icon" src={logo} alt="" />
@@ -13,7 +13,7 @@ function Overview({ bookmarked, toggleBookmarked, openModal }) {
       </h3>
 
       <div className="overview-footer">
-        <button className="overview-footer-btn" onClick={openModal}>
+        <button className="overview-footer-btn" onClick={overviewClick}>
           Back this project
         </button>
         <div className="overview-footer-bookmark" onClick={toggleBookmarked}>
