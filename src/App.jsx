@@ -22,7 +22,7 @@ function App() {
   const [pledgeAmount, setPledgeAmount] = useState(0);
   const [error, setError] = useState('');
   const [showCompletedModal, setShowCompletedModal] = useState(false);
-  const [showMobileMenu, setShowMobileMenu] = useState(true);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   // data
   const [tiers, setTiers] = useState([

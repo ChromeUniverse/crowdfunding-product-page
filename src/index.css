@@ -593,7 +593,7 @@ input[type="checkbox"] {
 @media (max-width: 775px) {
   
   body {
-    background-image: url('images/image-hero-mobile.jpg');
+    background-image: url('/images/image-hero-mobile.jpg');
   }
 
   .nav {
