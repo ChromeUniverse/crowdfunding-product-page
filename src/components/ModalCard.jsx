@@ -33,12 +33,15 @@ function ModalCard({
           />
           <span className="modal-card-checkbox-checkmark"></span>
         </label>
-        <p className="modal-card-title">{title}</p>
 
-        {/* no price provided */}
-        {price !== false && (
-          <p className="modal-card-pledge">Pledge ${price} or more</p>
-        )}
+        <div className="modal-card-info">
+          <p className="modal-card-title">{title}</p>
+
+          {/* no price provided */}
+          {price !== false && (
+            <p className="modal-card-pledge">Pledge ${price} or more</p>
+          )}
+        </div>
 
         {/* no quantity provided */}
         {quantity !== false && (
@@ -51,6 +54,14 @@ function ModalCard({
 
       <p className="modal-card-text">{text}</p>
 
+      {/* no quantity provided */}
+      {quantity !== false && (
+        <div className="modal-card-quantity-mobile">
+          <p className="modal-card-quantity-highlight-mobile">{quantity}</p>
+          <p>left</p>
+        </div>
+      )}
+
       {/* only render divider and footer if selected */}
       {selected && (
         <>
@@ -58,23 +69,25 @@ function ModalCard({
           <div className="modal-card-footer">
             <p className="modal-card-footer-prompt">Enter your pledge</p>
             <p className="modal-card-footer-error">{error}</p>
-            <div className="modal-card-footer-input-container">
-              <input
-                className={`modal-card-footer-input ${
-                  error ? "modal-card-footer-input-error" : ""
-                }`}
-                type="text"
-                value={pledgeAmount}
-                onChange={handlePledgeAmountChange}
-              />
-              <p className="modal-card-footer-input-placeholder">$</p>
+            <div className="modal-card-footer-main">
+              <div className="modal-card-footer-input-container">
+                <input
+                  className={`modal-card-footer-input ${
+                    error ? "modal-card-footer-input-error" : ""
+                  }`}
+                  type="text"
+                  value={pledgeAmount}
+                  onChange={handlePledgeAmountChange}
+                />
+                <p className="modal-card-footer-input-placeholder">$</p>
+              </div>
+              <button
+                className="modal-card-footer-btn"
+                onClick={() => handleModalCardClick(id, pledgeAmount)}
+              >
+                Continue
+              </button>
             </div>
-            <button
-              className="modal-card-footer-btn"
-              onClick={() => handleModalCardClick(id, pledgeAmount)}
-            >
-              Continue
-            </button>
           </div>
         </>
       )}

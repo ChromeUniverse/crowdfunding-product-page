@@ -14,10 +14,14 @@ function Stats({ backed, goal, backers }) {
           <h2 className="stats-item-title">${backed.toLocaleString()}</h2>
           <p className="stats-item-subtitle">of ${goal.toLocaleString()} backed</p>
         </div>
+        <div className="vl"></div>
+        <div className="hl"></div>
         <div className="stats-item">
           <h2 className="stats-item-title">{backers.toLocaleString()}</h2>
           <p className="stats-item-subtitle">total backers</p>
         </div>
+        <div className="vl"></div>
+        <div className="hl"></div>
         <div className="stats-item">
           <h2 className="stats-item-title">56</h2>
           <p className="stats-item-subtitle">days left</p>

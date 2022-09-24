@@ -134,7 +134,7 @@ function App() {
         inline: "center",
       });
     }
-  }, [showModal])
+  }, [showModal, selected])
   
   // modal submisssion handler
   function handleModalCardClick(id, amount) {
