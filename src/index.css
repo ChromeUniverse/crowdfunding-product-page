@@ -1,0 +1,626 @@
+:root {
+  /* Primary */
+  --moderate-cyan: #3cb4ac;
+  --dark-cyan: #147b74;
+  --error-red: red;
+  /* Neutral */
+  --black: #000000;
+  --dark-gray: #7a7a7a; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url('/images/image-hero-desktop.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fafafaff;
+}
+
+#root {
+  position: relative;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Commissioner';
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.nav-logo {
+  cursor: pointer;
+}
+
+.nav-ham {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-links-item {
+  color: white;
+  cursor: pointer;
+}
+
+.main {
+  width: 750px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.overview, .stats, .content, .pledge-card, .modal, .completed-modal {
+  width: 100%;  
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;  
+  position: relative;
+  padding: 50px 50px;
+}
+
+.overview {
+  margin-top: 210px;
+  align-items: center;  
+}
+
+.overview-icon {
+  left: calc(50% - 28px);
+  top: -28px;
+  position: absolute;
+}
+
+.overview-title {
+  font-size: 27px;
+  margin-top: 0px;
+}
+
+.overview-subtitle {
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--dark-gray);
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.overview-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.overview-footer-btn {
+  background-color: var(--moderate-cyan);
+  color: white;
+  border: none;
+  border-radius: 10000px;
+  box-sizing: content-box;
+  padding: 0 40px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.overview-footer-btn:hover {
+  background-color: var(--dark-cyan);
+}
+
+.overview-footer-bookmark {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f4f4f4ff;
+  border-radius: 10000px;
+  cursor: pointer;
+}
+
+.overview-footer-bookmark:hover {
+  opacity: 0.5;
+}
+
+.overview-footer-bookmark-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark-gray);
+  box-sizing: content-box;
+  padding: 0 20px 0 15px;
+  user-select: none;
+}
+
+.overview-footer-bookmark-text-highlight {
+  color: var(--dark-cyan);
+}
+
+.stats {
+  gap: 30px;
+}
+
+.stats-items {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+}
+
+.stats-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stats-item-title {
+  font-size: 30px;
+}
+
+.stats-item-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-gray);
+}
+
+.stats-bar-container {
+  position: relative;
+  width: 100%;
+}
+
+.stats-bar {
+  background-color: #f4f4f4ff;
+  width: 100%;
+  height: 15px;
+  border-radius: 1000000px;
+}
+
+.stats-bar-highlight {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--moderate-cyan);
+  /* width: 70%; */
+  height: 15px;
+  border-radius: 1000000px;
+}
+
+.content {
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.content-text {
+  color: var(--dark-gray);
+  line-height: 30px;
+}
+
+.pledge-card {
+  padding: 30px 25px;
+  border: thin solid rgb(172, 172, 172);
+  gap: 22px;
+}
+
+.pledge-card-hidden {
+  opacity: 0.5;
+}
+
+.pledge-card-header, .pledge-card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pledge-card-price {
+  color: var(--moderate-cyan);
+  font-weight: 700;
+}
+
+.pledge-card-text {
+  line-height: 30px;
+  color: var(--dark-gray);
+}
+
+.pledge-card-quantity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--dark-gray);
+  gap: 8px;
+}
+
+.pledge-card-quantity-highlight {
+  font-size: 30px;
+  font-weight: 700;
+  color: black;
+}
+
+.pledge-card-btn {
+  color: white;
+  font-weight: 700;
+  background-color: var(--moderate-cyan);
+  border: none;
+  border-radius: 100000px;
+  padding: 15px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pledge-card-btn:hover {
+  background-color: var(--dark-cyan);
+}
+
+.pledge-card-btn-hidden {
+  background-color: var(--dark-gray);
+  cursor: inherit;
+}
+
+.pledge-card-btn-hidden:hover {
+  background-color: var(--dark-gray)
+}
+
+.modal-container {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  height: calc(100% + 30px);
+  overflow-y: hidden;
+  width: 100%;
+  background-color: #00000088;
+}
+
+.modal, .completed-modal {
+  margin: auto;
+  margin-top: 100px;
+  width: 750px;
+  z-index: 1;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.modal-desc {
+  color: var(--dark-gray);
+}
+
+.modal-card {
+  border: 2px solid rgb(206, 206, 206);
+  border-radius: 5px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;  
+  gap: 15px;
+}
+
+.modal-card-selected {
+  border: 2px solid var(--moderate-cyan);
+}
+
+.modal-card-hidden {
+  opacity: 0.5;
+}
+
+.modal-card-hidden > input[type="checkbox"] {
+  pointer-events: none;
+}
+
+.modal-card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.modal-card-checkbox-container {
+  display: block;
+  position: relative;
+  /* padding-left: 35px; */
+  /* margin-bottom: 12px; */
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+}
+
+.modal-card-checkbox-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 26px;
+  width: 26px;
+  /* background-color: #eee; */
+  border: thin solid var(--dark-gray);
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.modal-card-checkbox-container:hover input ~ .modal-card-checkbox-checkmark {
+  background-color: rgb(217, 217, 217);
+}
+
+/* When the radio button is checked, add a blue background */
+.modal-card-checkbox-container input:checked ~ .modal-card-checkbox-checkmark {
+  background-color: white;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.modal-card-checkbox-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.modal-card-checkbox-container input:checked ~ .modal-card-checkbox-checkmark:after {
+  display: block;
+  background-color: var(--moderate-cyan);
+}
+
+/* Style the indicator (dot/circle) */
+.modal-card-checkbox-container .modal-card-checkbox-checkmark:after {
+ 	top: 6px;
+	left: 6px;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: white;
+}
+
+.modal-card-title {
+  font-weight: 700;
+}
+
+.modal-card-pledge {
+  font-weight: 700;
+  color: var(--moderate-cyan);
+}
+
+.modal-card-quantity {
+  margin-left: auto;
+  color: var(--dark-gray);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-card-quantity-highlight {
+  font-size: 20px;
+  color: black;
+  font-weight: 700;
+}
+
+.modal-card-text {
+  padding-left: 43px;
+  color: var(--dark-gray);
+  line-height: 25px;
+}
+
+.modal-card-divider {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-left: -30px;
+  width: 646px;
+  height: 2px;
+  background-color: rgb(206, 206, 206);
+  border: none;
+}
+
+.modal-card-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-card-footer-prompt {
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: auto;
+  color: var(--dark-gray);
+}
+
+.modal-card-footer-error {
+  font-weight: 500;
+  color: var(--error-red);
+}
+
+.modal-card-footer-input-container {
+  position: relative;
+}
+
+.modal-card-footer-input {
+  width: 100px;
+  border-radius: 10000px;
+  height: 100%;
+  padding: 15px 15px 15px 35px;
+  font-weight: 700;
+  font-size: 15px;
+  border: 1px solid var(--dark-gray);
+}
+
+.modal-card-footer-input:focus-visible {
+  outline: none;
+  border: 1px solid var(--moderate-cyan);
+}
+
+.modal-card-footer-input-error {
+  border: 1px solid var(--error-red);
+}
+
+.modal-card-footer-input-error:focus-visible {
+  border: 1px solid var(--error-red);
+}
+
+.modal-card-footer-input-placeholder {
+  position: absolute;
+  top: 16px;
+  left: 22px;
+  color: var(--dark-gray);
+  font-size: 15px;
+}
+
+.modal-card-footer-btn {
+  color: white;
+  font-weight: 700;
+  background-color: var(--moderate-cyan);
+  border: none;
+  border-radius: 100000px;
+  padding: 15px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.modal-card-footer-btn:hover {
+  background-color: var(--dark-cyan);
+}
+
+.completed-modal {
+  margin-top: 400px;
+  width: 600px;
+  align-items: center;
+  gap: 20px;
+}
+
+.completed-modal-icon {
+  width: 120px;
+  margin-bottom: 30px;
+}
+
+.completed-modal-title {
+  font-size: 28px;
+}
+
+.completed-modal-text {
+  /* font-size: 15; */
+  color: var(--dark-gray);
+  line-height: 30px;
+  text-align: center;
+}
+
+.completed-modal-btn {
+  background-color: var(--moderate-cyan);
+  color: white;
+  border: none;
+  border-radius: 10000px;
+  box-sizing: content-box;
+  padding: 15px 40px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.completed-modal-btn:hover {
+  background-color: var(--dark-cyan);
+}
+
+@media (max-width: 775px) {
+  
+  body {
+    background-image: url('images/image-hero-mobile.jpg');
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .main {
+    width: 90vw;
+  }
+
+  .overview, .stats, .content, .pledge-card, .modal, .completed-modal {
+    padding: 50px 30px;
+  }
+
+  .overview-title, .overview-subtitle {
+    text-align: center;
+  }
+
+  .overview-footer {
+    gap: 10px;
+  }
+
+  .overview-footer-btn {
+    width: 100%;
+  }
+
+  .overview-footer-bookmark-text {
+    display: none;
+  }
+
+  .stats-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .stats-item {
+    text-align: center;
+  }
+
+  .pledge-card {
+    padding: 30px;
+  }
+
+  .pledge-card-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pledge-card-footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pledge-card-quantity-highlight {
+    font-size: 40px;
+  }
+
+  .modal, .completed-modal {
+    width: 90vw;
+  }
+
+  .modal-card-quantity {
+    display: none;
+  }
+
+  .modal-card-text {
+    padding-left: 0;
+  }
+
+  .modal-card-divider {
+    width: calc(90vw - 64px);
+  }
+
+}
